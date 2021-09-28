@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StartupServices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="ApplicationApprover_InstanceCount" Value="1" />
+    <Parameter Name="AdminAPI_InstanceCount" Value="1" />
+    <Parameter Name="ApplicationData_PartitionCount" Value="2" />
+    <Parameter Name="ApplicationData_MinReplicaSetSize" Value="3" />
+    <Parameter Name="ApplicationData_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="CitizenData_PartitionCount" Value="2" />
+    <Parameter Name="CitizenData_MinReplicaSetSize" Value="3" />
+    <Parameter Name="CitizenData_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="ApplicationWeb_InstanceCount" Value="1" />
+  </Parameters>
+</StartupServices>
