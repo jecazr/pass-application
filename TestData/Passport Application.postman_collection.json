@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "a0ef839f-284d-404f-8694-e65ccd70c6df",
+		"name": "Passport Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Citizen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8957/api/webapp/citizen/0000000000001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8957",
+					"path": [
+						"api",
+						"webapp",
+						"citizen",
+						"0000000000001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19081/PassportApplication/ApplicationWeb/api/webapp/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19081",
+					"path": [
+						"PassportApplication",
+						"ApplicationWeb",
+						"api",
+						"webapp",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applications For Citizen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19081/PassportApplication/ApplicationWeb/api/webapp/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19081",
+					"path": [
+						"PassportApplication",
+						"ApplicationWeb",
+						"api",
+						"webapp",
+						"applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Citizen",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": \"{{citizenId}}\",\r\n    \"Name\": \"{{citizenName}}\",\r\n    \"DateOfBirth\": \"1980-09-08T00:00:00+02:00\",\r\n    \"Gender\": {{citizenGender}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19081/PassportApplication/AdminAPI/api/webapp/citizens/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19081",
+					"path": [
+						"PassportApplication",
+						"AdminAPI",
+						"api",
+						"webapp",
+						"citizens",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Citizen",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": \"0000000000001\",\r\n    \"Name\": \"Miki Maus\",\r\n    \"DateOfBirth\": \"1980-09-08T00:00:00+02:00\",\r\n    \"Gender\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:19081/PassportApplication/ApplicationWeb/api/webapp/citizen/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "19081",
+							"path": [
+								"PassportApplication",
+								"ApplicationWeb",
+								"api",
+								"webapp",
+								"citizen",
+								"create"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Template example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": \"{{citizenId}}\",\r\n    \"Name\": \"{{citizenName}}\",\r\n    \"DateOfBirth\": \"1980-09-08T00:00:00+02:00\",\r\n    \"Gender\": {{citizenGender}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:19081/PassportApplication/AdminAPI/api/webapp/citizen/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "19081",
+							"path": [
+								"PassportApplication",
+								"AdminAPI",
+								"api",
+								"webapp",
+								"citizen",
+								"create"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Application",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:19081/PassportApplication/ApplicationWeb/api/webapp/applications/create/{{citizenId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19081",
+					"path": [
+						"PassportApplication",
+						"ApplicationWeb",
+						"api",
+						"webapp",
+						"applications",
+						"create",
+						"{{citizenId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
